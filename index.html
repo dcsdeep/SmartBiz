@@ -1,0 +1,419 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBiz: 'Start Bold India' Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'smart-dark': '#004AAD',
+                        'smart-primary': '#005BC5',
+                        'smart-blue': '#0074D9',
+                        'smart-medium': '#008DFF',
+                        'smart-light': '#00BFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-5xl font-bold text-smart-dark mb-4">SmartBiz: The 'Start Bold India' Influencer Strategy</h1>
+            <p class="text-xl md:text-2xl text-smart-blue font-light">Empowering India’s next generation of entrepreneurs—from aspirational founders to established D2C creators.</p>
+        </header>
+
+        <section class="mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <p class="text-sm uppercase text-gray-500 tracking-wider">Our Core Promise</p>
+                <p class="text-2xl md:text-3xl font-semibold text-smart-primary mt-2">“If you’ve got an idea, we’ve got your website.”</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
+                <div>
+                    <p class="text-sm uppercase text-gray-500 tracking-wider">Key Message: Speed</p>
+                    <p class="text-6xl font-bold text-smart-light my-3">10 Minutes</p>
+                    <p class="text-lg text-smart-dark">Launch your business before your chai cools down.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
+                <div>
+                    <p class="text-sm uppercase text-gray-500 tracking-wider">Key Message: Simplicity</p>
+                    <p class="text-6xl font-bold text-smart-medium my-3">0 Code</p>
+                    <p class="text-lg text-smart-dark">No code. No chaos. Just commerce.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-smart-dark mb-3">The Influencer Mix: Reach & Trust</h2>
+                <p class="text-gray-600 mb-4">Our strategy balances broad reach with deep community trust by splitting focus between Micro and Nano influencers.</p>
+                <div class="chart-container">
+                    <canvas id="influencerMixChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">Micro-influencers drive awareness, while Nano-influencers build authentic conversion.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-smart-dark mb-3">Creator Roles: A Content Ecosystem</h2>
+                <p class="text-gray-600 mb-4">We're not just buying posts; we're building a content ecosystem with creators filling four key roles.</p>
+                <div class="chart-container">
+                    <canvas id="creatorRolesChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">A heavy focus on 'Educators' will demonstrate product simplicity, supported by 'Motivators' to drive action.</p>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-12">
+            <h2 class="text-2xl font-semibold text-smart-dark mb-3 text-center">Target Industry Focus</h2>
+            <p class="text-gray-600 mb-4 text-center max-w-3xl mx-auto">To ensure high relatability, our outreach will focus on India’s most active and aspirational creator-driven niches.</p>
+            <div class="chart-container" style="max-width: 800px; height: 400px; max-height: 450px;">
+                <canvas id="targetSectorsChart"></canvas>
+            </div>
+            <p class="text-sm text-gray-500 mt-4 text-center">'Fashion & Lifestyle' and 'Womenpreneurs' represent key high-engagement sectors for our initial push.</p>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-smart-dark mb-3">Core Content Deliverables</h2>
+                <p class="text-gray-600 mb-4">Each influencer partnership is structured around a core set of high-impact deliverables per creator.</p>
+                <div class="chart-container" style="height: 250px; max-height: 300px;">
+                    <canvas id="deliverablesChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">The focus is on Reels and Stories to maximize engagement and direct traffic.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-smart-dark mb-3">Key Content Themes</h2>
+                <p class="text-gray-600 mb-4">Content will be built around relatable concepts that mirror the user journey and address key pain points.</p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-smart-primary mb-3 border-b border-smart-light pb-2">Reel Themes</h3>
+                        <ul class="space-y-2 list-inside">
+                            <li class="flex items-center text-gray-700">
+                                <span class="text-smart-medium mr-2">▶</span> "Chai Pe Startup" Challenge
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="text-smart-medium mr-2">▶</span> "The DM Hustle is Over"
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="text-smart-medium mr-2">▶</span> "10-Minute Business Challenge"
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-smart-primary mb-3 border-b border-smart-light pb-2">Carousel Themes</h3>
+                        <ul class="space-y-2 list-inside">
+                            <li class="flex items-center text-gray-700">
+                                <span class="text-smart-medium mr-2">▶</span> "Excuse vs. Smart Start"
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="text-smart-medium mr-2">▶</span> "Everyday Hustles"
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">Themes directly address user pain points (time, skill) and aspirational goals.</p>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-12">
+            <h2 class="text-2xl font-semibold text-smart-dark mb-3 text-center">Localized Content Tone</h2>
+            <p class="text-gray-600 mb-4 text-center max-w-3xl mx-auto">Authenticity is key. Our content tone will be tailored to the influencer tier to maximize connection.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-max divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aspect</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Micro Influencers</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nano Influencers</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Tone</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Aspirational and Educative</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Relatable and Story-based</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Language</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">English + Hinglish</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Hinglish / Regional Mix</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Style</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Polished, professional edits</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Raw, authentic mobile-shot Reels</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Primary CTA</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">“Build your brand today.”</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">“Try SmartBiz—it’s easier than you think!”</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-500 mt-4 text-center">Micro-influencers provide an aspirational look, while Nano-influencers offer a raw, regional connection.</p>
+        </section>
+
+        <footer class="bg-smart-dark text-white p-8 rounded-lg shadow-xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Community Activation</h2>
+            <p class="text-xl mb-2">The campaign culminates in the</p>
+            <p class="text-4xl font-bold text-smart-light mb-4">“10-Minute Business Challenge Week”</p>
+            <p class="text-lg">Driving mass user-generated content, engagement, and a powerful community-driven launch.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function processLabel(label) {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if (currentLine.length + word.length + 1 > 16 && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine === '' ? word : currentLine + ' ' + word);
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            }
+
+            const multiLineTooltipCallback = {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            };
+
+            const colors = {
+                dark: '#004AAD',
+                primary: '#005BC5',
+                blue: '#0074D9',
+                medium: '#008DFF',
+                light: '#00BFFF',
+                gray: '#6B7280'
+            };
+
+            
+            const influencerMixCtx = document.getElementById('influencerMixChart');
+            if (influencerMixCtx) {
+                new Chart(influencerMixCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: [
+                            processLabel('Micro-Influencers (50k-100k)'), 
+                            processLabel('Nano-Influencers (5k-50k)')
+                        ],
+                        datasets: [{
+                            data: [60, 40],
+                            backgroundColor: [colors.primary, colors.light],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: multiLineTooltipCallback
+                            }
+                        }
+                    }
+                });
+            }
+
+            
+            const creatorRolesCtx = document.getElementById('creatorRolesChart');
+            if (creatorRolesCtx) {
+                new Chart(creatorRolesCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Educators', 'Motivators', 'Entertainers', 'Specialists'].map(processLabel),
+                        datasets: [{
+                            label: 'Percentage of Focus',
+                            data: [40, 30, 20, 10],
+                            backgroundColor: [colors.primary, colors.blue, colors.medium, colors.light],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Percentage of Focus (%)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: multiLineTooltipCallback
+                            }
+                        }
+                    }
+                });
+            }
+
+            
+            const targetSectorsCtx = document.getElementById('targetSectorsChart');
+            if (targetSectorsCtx) {
+                new Chart(targetSectorsCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'Fashion & Lifestyle',
+                            'Womenpreneurs & Mompreneurs',
+                            'Food & Beverage',
+                            'Art, Craft & Handmade',
+                            'Tech & Digital Services'
+                        ].map(processLabel),
+                        datasets: [{
+                            label: 'Target Reach Priority',
+                            data: [30, 25, 20, 15, 10],
+                            backgroundColor: [colors.primary, colors.blue, colors.medium, colors.light, colors.dark],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Target Priority Score'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: multiLineTooltipCallback
+                            }
+                        }
+                    }
+                });
+            }
+
+            
+            const deliverablesCtx = document.getElementById('deliverablesChart');
+            if (deliverablesCtx) {
+                new Chart(deliverablesCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Reels', 'Carousel Posts', 'Story Frames'].map(processLabel),
+                        datasets: [{
+                            label: 'Units per Influencer',
+                            data: [3, 1, 5],
+                            backgroundColor: [colors.primary, colors.medium, colors.light],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Count per Influencer'
+                                },
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: multiLineTooltipCallback
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- Infographic Chart Selection Guide (Adapted for NO SVG) -->
+    <!-- Plan Narrative & Structure -->
+    <!-- 1. Header: Introduce the "Start Bold India" campaign. -->
+    <!-- 2. Core Pillars: Use "Big Number" cards to highlight "10-Minute Launch" and "0 Code." -->
+    <!-- 3. Influencer Strategy: Use a Donut Chart for Micro/Nano split and a Vertical Bar Chart for Creator Roles. -->
+    <!-- 4. Target Sectors: Use a Horizontal Bar Chart to show the priority of industry niches. -->
+    <!-- 5. Content Plan: Use another Horizontal Bar Chart for deliverables-per-influencer and a custom HTML/Tailwind "flow" diagram for content themes. -->
+    <!-- 6. Localization: Use a styled HTML Table to compare Micro vs. Nano tones. -->
+    <!-- 7. Conclusion: A final CTA card about the "10-Minute Business Challenge." -->
+    <!-- Select Optimal Visualizations -->
+    <!-- Data: Influencer Mix (Micro/Nano): Goal: Inform/Compare. Viz: Donut Chart. Justification: Shows simple composition of the two main groups. Lib: Chart.js (Canvas). NO SVG. -->
+    <!-- Data: Creator Roles (Educator, etc.): Goal: Compare. Viz: Vertical Bar Chart. Justification: Compares the focus/volume of each creator type. Lib: Chart.js (Canvas). NO SVG. -->
+    <!-- Data: Target Sectors (Fashion, etc.): Goal: Compare. Viz: Horizontal Bar Chart. Justification: Best for comparing categories with longer labels. Lib: Chart.js (Canvas). NO SVG. -->
+    <!-- Data: Deliverables (Reels, etc.): Goal: Compare. Viz: Horizontal Bar Chart. Justification: Clearly shows the count for each deliverable type. Lib: Chart.js (Canvas). NO SVG. -->
+    <!-- Data: Content Themes (Reel Ideas): Goal: Organize. Viz: Flow Diagram (HTML/Tailwind). Justification: Shows process/grouping of creative concepts. Method: HTML/CSS. NO SVG, NO MERMAID JS. -->
+    <!-- Data: Localization Tone (Micro/Nano): Goal: Organize/Compare. Viz: Styled Table. Justification: Best for direct, qualitative comparison. Method: HTML/CSS. NO SVG. -->
+    <!-- Data: Key Messages (10-min, 0-code): Goal: Inform. Viz: Big Number Cards. Justification: High-impact for core stats. Method: HTML/CSS. NO SVG. -->
+    <!-- Output Constraint Confirmation: NEITHER Mermaid JS NOR SVG were used in this file. All diagrams are HTML/CSS or Canvas. -->
+    <!-- Chosen Color Palette: "Brilliant Blues" (#004AAD, #005BC5, #0074D9, #008DFF, #00BFFF) -->
+</body>
+</html>
